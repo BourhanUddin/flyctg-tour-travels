@@ -6,15 +6,9 @@ const app: Application = express();
 app.use(express.json());
 app.use(cors());
 
-app.get("/", (req: Request, res: Response) => {
-  // res.send("Hello World!");
-  res.status(200).json({
-    status: "success",
-    message: "Welcome to FlyCtg Tours & Travels",
-  });
-});
-
-app.get("/api/v1/users", (req: Request, res: Response) => {
+const userRoute = express.Router();
+//.use work as middleware
+userRoute.use("/all-users", (req, res) => {
   const user = [
     {
       id: 1,
@@ -31,10 +25,26 @@ app.get("/api/v1/users", (req: Request, res: Response) => {
       name: "habib",
       email: "habib@gmail.com",
     },
+    {
+      id: 4,
+      name: "tabib",
+      email: "tabib@gmail.com",
+    },
   ];
   res.status(200).json({
     status: "success",
     data: user,
+  });
+});
+
+app.use("/api/v1/users", userRoute);
+
+//test
+app.get("/", (req: Request, res: Response) => {
+  // res.send("Hello World!");
+  res.status(200).json({
+    status: "success",
+    message: "Welcome to FlyCtg Tours & Travels",
   });
 });
 
