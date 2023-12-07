@@ -1,0 +1,6 @@
+software design pattern 
+=> MVC Moduler 
+M -> Model => data modeling (mongoose)//business 
+V -> View : deprecated nowadays X
+C -> Controller => request , response handler 
+Service -> (business logic)
