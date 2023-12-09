@@ -4,3 +4,33 @@ M -> Model => data modeling (mongoose)//business
 V -> View : deprecated nowadays X
 C -> Controller => request , response handler 
 Service -> (business logic)
+
+***** Requirment Analysis ****
+#Entities 
+1. user 4
+2. Tour 
+3.Locations 
+4. Review 
+5. Booking 
+
+# Collection DataBase 
+user:{
+    Name :
+    email : 
+    review :{
+        review : "good",
+        review : "bad"
+    }
+    booking : "dhaka to cox's Bazar ",
+} 
+tour:{
+    location :[
+        {
+            TourName : "St. Martin ",
+        }
+    ]
+}
+Embedding & Referencing 
+Embedding => one to one , one to few , for small data collection 
+Referencing => one to many , many to many , for large data collection 
+Refreshing :
